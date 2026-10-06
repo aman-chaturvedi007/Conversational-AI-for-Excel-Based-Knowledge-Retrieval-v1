@@ -1,0 +1,30 @@
+# Secret environment variables, including API keys
+.env
+
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Generated database and RAG storage
+storage/
+
+# Generated charts
+static/charts/
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Temporary and output directories
+tmp/
+output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Nested pycache
+**/__pycache__/
+**/*.pyc

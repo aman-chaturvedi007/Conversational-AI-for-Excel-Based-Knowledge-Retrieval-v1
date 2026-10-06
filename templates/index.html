@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Operations Analytics Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js" defer></script>
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+
+<body>
+    <main class="app-shell">
+        <section class="chat-panel">
+            <header class="app-header">
+                <div>
+                    <p class="eyebrow">Oracle-powered analytics</p>
+                    <h1>Operations Analytics Assistant</h1>
+                    <p class="header-description">
+                        Ask questions, analyze plant data, and create interactive charts.
+                    </p>
+                </div>
+
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    Oracle ready
+                </div>
+            </header>
+
+            <section class="suggestions">
+                <button class="suggestion" type="button">
+                    Show total records by battery.
+                </button>
+
+                <button class="suggestion" type="button">
+                    Create a box plot of AVG_PUSH_FORCE by ID_BATTERY.
+                </button>
+
+                <button class="suggestion" type="button">
+                    Show the production trend over time.
+                </button>
+            </section>
+
+            <section id="chat-messages" class="chat-messages" aria-live="polite">
+                <article class="message assistant-message">
+                    <div class="message-avatar">AI</div>
+
+                    <div class="message-content">
+                        <p>
+                            Hello! I can analyze approved Oracle data and create
+                            interactive Plotly charts.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <form id="chat-form" class="chat-form">
+                <label class="sr-only" for="message-input">
+                    Ask an Oracle data question
+                </label>
+
+                <textarea id="message-input" rows="2" required
+                    placeholder="Example: Create a box plot of AVG_PUSH_FORCE by ID_BATTERY."></textarea>
+
+                <button id="send-button" type="submit">
+                    Send ↑
+                </button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
